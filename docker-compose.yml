@@ -1,0 +1,26 @@
+version: "3"
+services:
+  mongo:
+    image: mongo
+    expose:
+      - ${MONGODB_PORT}
+    ports:
+      - "${MONGODB_PORT}:${MONGODB_PORT}"
+  backend:
+    build:
+      dockerfile: backend/Dockerfile
+    depends_on:
+      - mongo
+    expose:
+        - ${BACKEND_PORT}
+    ports:
+      - "${BACKEND_PORT}:${BACKEND_PORT}"
+    environment:
+    - MONGODB_URI=${MONGODB_URI}
+  frontend:
+    build:
+      dockerfile: frontend/Dockerfile
+    expose:
+        - 80
+    ports:
+        - "80:80"

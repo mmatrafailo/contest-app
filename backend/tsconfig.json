@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "target": "ES5",
+        "module": "CommonJS",
+        "lib": [
+            "ES2021",
+            "ScriptHost"
+        ],
+        "moduleResolution": "Node",
+        "allowJs": true,
+        "downlevelIteration": true,
+        "esModuleInterop": true,
+        "preserveSymlinks": true,
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "useUnknownInCatchVariables": false,
+        "outDir": "build"
+    },
+    "include": [
+        "src"
+    ],
+}
